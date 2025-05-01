@@ -1,0 +1,150 @@
+# Повторно создаём HTML-файл с базовой структурой и нужными разделами
+html_template = """
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3Dmodel.courses — Курс по 3D-моделированию</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #f0f0f0;
+    }
+    header, footer, .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    header {
+      background-color: #222;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: 2em;
+    }
+    .card {
+      background-color: #333;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .cta {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .cta a {
+      background: #ff9900;
+      padding: 15px 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    .contacts a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>3Dmodel.courses</h1>
+  <p>Авторский онлайн-курс по 3D-моделированию в SolidWorks</p>
+</header>
+
+<section class="section">
+  <h2>О курсе</h2>
+  <div class="card">
+    <p>Научись создавать профессиональные 3D-модели в SolidWorks с нуля. Курс подойдёт как новичкам, так и тем, кто хочет повысить свой уровень и выйти на рынок фриланса. Вас ждут практические занятия, домашние задания и поддержка куратора.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Кому подойдёт</h2>
+  <div class="card"><strong>Студентам</strong>: начни карьеру в дизайне и инженерии уже во время учёбы.</div>
+  <div class="card"><strong>Женщинам в декрете</strong>: новая профессия без отрыва от семьи.</div>
+  <div class="card"><strong>Будущим фрилансерам</strong>: зарабатывай удалённо, создавая 3D-модели на заказ.</div>
+</section>
+
+<section class="section">
+  <h2>Преимущества</h2>
+  <ul class="card">
+    <li>📦 Доступ к материалам навсегда</li>
+    <li>🛠 Практика на реальных кейсах</li>
+    <li>🧑‍🏫 Поддержка и обратная связь</li>
+    <li>💼 Помощь с портфолио и стартом на фрилансе</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Примеры работ учеников</h2>
+  <div class="gallery">
+    <img src="https://saprblog.ru/wp-content/uploads/2014/07/sw4web2.jpg" alt="">
+    <img src="https://cdni.artstation.com/p/assets/images/images/052/653/786/large/olga-yakovleva-render2.jpg?1650450872" alt="">
+    <img src="https://sapr.ru/upload/iblock/504/504a0a839b52f9f0f73efeb7b9e60e76.jpg" alt="">
+    <img src="https://3dpbm.com/wp-content/uploads/2020/06/SolidWorks.jpg" alt="">
+    <img src="https://3dtool.ru/wp-content/uploads/2021/05/SolidWorks-3.jpg" alt="">
+    <img src="https://pro-samodelki.ru/wp-content/uploads/2021/07/screenshot_3-24.jpg" alt="">
+    <img src="https://solidworks.kz/wp-content/uploads/2017/12/img_2.jpg" alt="">
+    <img src="https://i.ytimg.com/vi/Yp6rx39n3Ls/maxresdefault.jpg" alt="">
+    <img src="https://i.pinimg.com/originals/c0/e9/8c/c0e98c9c4073bd95155ea97e73adfd50.jpg" alt="">
+    <img src="https://solidworks.ru/wp-content/uploads/2022/09/SolidWorks_4.jpg" alt="">
+  </div>
+</section>
+
+<section class="section">
+  <h2>Отзывы студентов</h2>
+  <div class="gallery">
+    <img src="https://i.imgur.com/7XqLhVA.jpg" alt="">
+    <img src="https://i.imgur.com/t1YdAco.jpg" alt="">
+    <img src="https://i.imgur.com/EPQXzgO.jpg" alt="">
+    <img src="https://i.imgur.com/ZUAMQFH.jpg" alt="">
+    <img src="https://i.imgur.com/igXHbEq.jpg" alt="">
+    <img src="https://i.imgur.com/FC1Ydfk.jpg" alt="">
+    <img src="https://i.imgur.com/sP8WkVh.jpg" alt="">
+    <img src="https://i.imgur.com/Sr7kk0u.jpg" alt="">
+    <img src="https://i.imgur.com/EPsLh8A.jpg" alt="">
+    <img src="https://i.imgur.com/fB0Qftx.jpg" alt="">
+  </div>
+</section>
+
+<section class="section cta">
+  <a href="https://t.me/modellier" target="_blank">Записаться на курс</a>
+</section>
+
+<section class="section contacts">
+  <h2>Контакты</h2>
+  <p><a href="https://www.instagram.com/3dmodel.courses?igsh=MWdsZnJsMHA0ZXprOA==" target="_blank">Instagram</a></p>
+  <p><a href="https://t.me/modellier" target="_blank">Telegram</a></p>
+</section>
+
+<footer>
+  <p style="text-align:center;">© 2025 3Dmodel.courses</p>
+</footer>
+</body>
+</html>
+"""
+
+# Сохраняем HTML-файл
+file_path = "/mnt/data/3dmodel_courses.html"
+with open(file_path, "w", encoding="utf-8") as file:
+    file.write(html_template)
+
+file_path
